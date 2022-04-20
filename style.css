@@ -63,6 +63,10 @@ header{
   background-color:rgba(255, 255, 255, 0);
 } 
 
+.botones:hover{
+  text-decoration: underline;
+}
+
 .botones1{
   border: none;
   margin-left: 15px;
@@ -73,6 +77,10 @@ header{
   background-color:rgba(255, 255, 255, 0);
 } 
 
+.botones1:hover{
+  text-decoration: underline;
+}
+
 .botones2{
   border: none;
   margin-left: 30px;
@@ -81,6 +89,10 @@ header{
   font-family: Raleway;
   text-decoration: none;
   background-color:rgba(255, 255, 255, 0);
+}
+
+.botones2:hover{
+  text-decoration: underline;
 }
 
 .Contenido{
