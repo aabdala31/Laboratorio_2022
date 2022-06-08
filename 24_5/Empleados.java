@@ -39,16 +39,20 @@ public class Empleados extends Persona{
         this.ingresos = ingresos;
     }
 
+    public boolean esImpar(int numero){
+        if(numero % 2 == 0) return false;
+        else return true;
+    }
     public boolean terminaEn30(int valorDias){
-        if(valorDias == 1 || valorDias == 3 || valorDias == 5 || valorDias == 7 || valorDias == 8 || valorDias == 10 || valorDias == 12){
+        if((valorDias <= 7 && esImpar(valorDias)) || (valorDias > 7 && !esImpar(valorDias))){
             return false;
         } else return true;
     }
 
     public int porcentajeAsistencia(int mes){
         int porcentaje = 0, suma = 0;
-        for(LocalDateTime i : this.ingresos){
-            if(i.getMonth().getValue() == mes){
+        for(LocalDateTime fechaAux : this.ingresos){
+            if(fechaAux.getMonthValue() == mes){
                 suma ++;
             }
         }

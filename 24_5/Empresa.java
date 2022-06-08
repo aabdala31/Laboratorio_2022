@@ -24,45 +24,45 @@ public class Empresa {
     public int cantidadDeEmpleadosActuales(){ // se tomo empleados Actuales a los empleados que trabajan el dia de hoy
         int cantidad = 0;
         String diaHoy = "Martes";
-        for(Empleados i : this.empleadosArray){
-            ArrayList<String> dias = i.getDiasLaboralesNombre();
-            for (String j : dias){
-                if(dias.equals(diaHoy)) cantidad++;
+        for(Empleados empleadoAux : this.empleadosArray){
+            ArrayList<String> dias = empleadoAux.getDiasLaboralesNombre();
+            for (String dia : dias){
+                if(dia.equals(diaHoy)) cantidad++;
             }
         }
         return cantidad;
     }
 
-    public void imprimirDatos (Empleados i){
-        System.out.println(i.getNombre());
-        System.out.println(i.getApellido());
-        System.out.println(i.getTelefono());
+    public void imprimirDatos (Empleados empleado){
+        System.out.println(empleado.getNombre());
+        System.out.println(empleado.getApellido());
+        System.out.println(empleado.getTelefono());
     }
 
 
     public void asistenciaPerfecta(int mes){
 
-        for(Empleados i: empleadosArray) {
-            if (i.porcentajeAsistencia(mes) == 100) {
-                imprimirDatos(i);
+        for(Empleados empleadoAux: this.empleadosArray) {
+            if (empleadoAux.porcentajeAsistencia(mes) == 100) {
+                imprimirDatos(empleadoAux);
             }
         }
     }
 
     public void asistencia50(int mes){
 
-        for(Empleados i: empleadosArray) {
-            if (i.porcentajeAsistencia(mes) <= 50) {
-                imprimirDatos(i);
+        for(Empleados empleadoAux: this.empleadosArray) {
+            if (empleadoAux.porcentajeAsistencia(mes) <= 50) {
+                imprimirDatos(empleadoAux);
             }
         }
     }
 
     public void llegadaTarde(int mes){
-        for(Empleados i: empleadosArray) {
-            int diferencia = i.getIngresos().get(i.getIngresos().size()-1).getMinute() - i.getHorarioLaboral().getMinute();
+        for(Empleados empleadoAux: empleadosArray) {
+            int diferencia = empleadoAux.getIngresos().get(empleadoAux.getIngresos().size()-1).getMinute() - empleadoAux.getHorarioLaboral().getMinute();
             if (diferencia >= 5) {
-                imprimirDatos(i);
+                imprimirDatos(empleadoAux);
             }
         }
     }
@@ -92,12 +92,12 @@ public class Empresa {
     }
 
     public void tablaSemanalDeTrabajadores(){
-        System.out.println("Lunes: " + getCantidadDeTrabajadoresMinima().get(0));
-        System.out.println("Martes: " + getCantidadDeTrabajadoresMinima().get(1));
-        System.out.println("Miercoles: " + getCantidadDeTrabajadoresMinima().get(2));
-        System.out.println("Jueves: " + getCantidadDeTrabajadoresMinima().get(3));
-        System.out.println("Viernes: " + getCantidadDeTrabajadoresMinima().get(4));
-
+        int contador = 0;
+        System.out.println("Lunes: " + getCantidadDeTrabajadoresMinima().get(contador));
+        System.out.println("Martes: " + getCantidadDeTrabajadoresMinima().get(contador++));
+        System.out.println("Miercoles: " + getCantidadDeTrabajadoresMinima().get(contador++));
+        System.out.println("Jueves: " + getCantidadDeTrabajadoresMinima().get(contador++));
+        System.out.println("Viernes: " + getCantidadDeTrabajadoresMinima().get(contador++));
     }
 
 
