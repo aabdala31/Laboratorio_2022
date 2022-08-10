@@ -18,7 +18,7 @@ public class Fecha {
     }
 
     public boolean añoEsBisiesto(){
-        if(this.año % 400 == 0) return true; //para que un año sea bisiesto tiene que ser divisible por 400
+        if(this.año % 4 == 0) return true; //para que un año sea bisiesto tiene que ser divisible por 4
         return false;
     }
 
